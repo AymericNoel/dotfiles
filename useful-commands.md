@@ -1,0 +1,53 @@
+# Useful commands
+
+- `netstat -tunapl` : to see open ports
+- `ss` : new version of netstat
+- `df -h` : display partitions and percentage of use
+- `rsync -rav source/ dest/` : copy of files & directories
+- `ps aux` : see process and pid's
+- `pkill "name of resource"` : kill the specified resource. Can also be done with pid
+- `pgrep "name of resource"` : give the corresponding pid's
+- `strace -p "pid" -f (to list open under program too)` : to trace the calls of this pid to the system (read, write, network communication)
+- `curl -vI` : verbose=details, I=header
+- `curl --cacert ca.pem https://www.google.com` : copy the site certificate and put it in ca.pem
+- `update-ca-trust` : to renew the certificate bundle
+- `watch *insert_command*`: run command every s
+- `watch -n *insert_command*` : run command every n seconds
+- `traceroute "host"`: return all the call until the final host
+- `tcpdump -i any -nn -s0 -A` : allows to watch all requests by specifying protocol, port, network,  etc... -i = specify network or any, -nn = Specifies that tcpdump should not perform hostname resolution, which can speed up the capture process, -s0 = Specifies that tcpdump should capture the entire packet, rather than truncating it to the default snapshot length, -A = Specifies that tcpdump should print packet data in ASCII format, which makes it easier to read and analyze. 
+- `arp -a` : show arp table (local ip's with mac addresses)
+- `ifconfig -a` or `hostname -I` : show local ip
+- `ip route` : show the routing table with default gateway
+- `lsof -p "pid"` : to see all the history of files opened by this pid
+- `lsof | less` : to see little by little the opened files without taking out the whole list
+- `fallocate -l 1g myFileName` : reserve 1g of disk space
+- `source bashFunction` : to load the file in the current bash session 
+- `python -m SimpleHTTPServer 8080` : to create a fast web server
+- `ssh-keygen -a xxx -t ed25519 -C "MyComment" -f ~/.ssh/keys/gitlab/account` : to create a ssh key
+- `git config core.sshCommand "ssh -i ~/.ssh/keys/gitlab/account -o 'IdentitiesOnly yes'"` : to tell git to take this specific ssh key
+- `gpg --expert --full-generate-key` : generate gpg key
+- `gpg --list-secret-keys --keyid-format LONG` : list gpg keys
+- `git config user.email <your anonymous email address>`
+- `gpg --armor --export <key_id>` : export and view the gpg key
+- `echo $?` : return error code of last command
+- `mktemp`: create a temporary file
+- `git config commit.gpgsign true` : tell git to sign commits
+- `git config user.signingkey <key_id>` : tell git which key to take
+- `file <file>` : return the file type and content type
+- `docker save "imageName" | ssh -C destination_host docker load` : save image throw ssh until final host
+- `stat <file>` : statistics of a specific file
+- `echo mystring | sed s/""//g : s/` : substitute a character by a specific string
+- `<command> | tee file` : writes the output of a command in the terminal and also in the specified file
+- `git checkout -` : returns to the previous branch
+- `git rebase -i HEAD~3` : allows to merge several commits by going back to 3 in an interactive way
+- `git reset --soft HEAD^` : undo the previous commit
+- `git commit --amend` : rewrite the last commit message
+- `git update-index --assume-unchanged package.json` : after putting a versionned file in gitignore, allow to not follow it locally when commits
+`- git rebase --onto main old_branch` : allow to do rebase when you create a branch on a branch and the last one is merged in main
+- `git reflog` : show the complete history even after rebase
+- `git add -p` : allows to choose what to add or not
+- `chroot` : to enter in a partition and put it in the main partition of your system to make commands on it directly, access your terminal etc
+- `lsblk` : list all partitions with disk
+- `sudo fdisk /dev/sda`: to enter the partitions utility then d for delete
+- alt + return : delete the left word in terminal prompt
+- alt + D : delete the right word in terminal prompt

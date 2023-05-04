@@ -1,0 +1,13 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+[directory]
+truncation_length = 4
+
+[dotnet]
+detect_extensions = ['csproj', 'fsproj', 'xproj', 'sln']
+
+[localip]
+disabled = false
+
+[sudo]
+disabled = false

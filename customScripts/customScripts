@@ -1,0 +1,33 @@
+gch(){
+	selected_branch=$(git branch --all | fzf)
+
+	selected_branch_origin=$(echo $selected_branch | grep --count "^remotes")
+	if [[ $selected_branch_origin -eq 0 ]]; then
+	  git checkout $selected_branch
+	else
+	  new_selected_branch=$(echo $selected_branch | sed 's+remotes/origin/++g')
+	  git checkout $new_selected_branch
+	fi
+}
+
+jwt-extract() {
+
+  echo -e "\e[31mHeader:\e[0m"
+  jq -R 'split(".") | .[0] | @base64d | fromjson' <<< "$1"
+
+  echo -e "\e[31mPayload:\e[0m"
+  jq -R 'split(".") | .[1] | @base64d | fromjson' <<< "$1"
+
+  echo -e "\e[31mExpiration:\e[0m"
+  exp=$(jq -R 'split(".") | .[1] | @base64d | fromjson' <<< "$1" | jq -r '.exp')
+  date --date="@$exp"
+
+  echo -e "\e[31mIssued At:\e[0m"
+  iat=$(jq -R 'split(".") | .[1] | @base64d | fromjson' <<< "$1" | jq -r '.iat')
+  date --date="@$iat"
+
+  echo -e "\e[31mLifetime:\e[0m"
+  lifetime=$(( ($exp - $iat) / 60 ))
+  echo "${lifetime} minutes"
+
+}
