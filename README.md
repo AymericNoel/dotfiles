@@ -2,7 +2,7 @@
 
 Just my dotfiles.
 
-## 0. Getting started
+## Getting started
 
 ### Prerequisite(s)
 
@@ -86,7 +86,7 @@ Local Kubernetes cluster. You can alse use [k3d](https://k3d.io/) or [k9s](https
 
 Terminal multiplexer.
 
-## 17.[Scrcpy](https://github.com/Genymobile/scrcpy)
+## 17. [Scrcpy](https://github.com/Genymobile/scrcpy)
 
 To share mobile screen in live mode on computer.
 
