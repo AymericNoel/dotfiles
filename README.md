@@ -97,3 +97,7 @@ Modern `top` program. Can be replaced by [gtop](https://github.com/aksakalli/gto
 ## 19. [K6](https://k6.io/open-source/)
 
 Allow to do performance/load testing. You can also use [gatling](https://gatling.io/) or [locust](https://locust.io/).
+
+## 20. [Gdu](https://github.com/dundee/gdu)
+
+Graphical disk usage in cli.
