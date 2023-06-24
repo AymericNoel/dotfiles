@@ -101,3 +101,7 @@ Allow to do performance/load testing. You can also use [gatling](https://gatling
 ## 20. [Gdu](https://github.com/dundee/gdu)
 
 Graphical disk usage in cli.
+
+## 21. [Terminator](https://doc.ubuntu-fr.org/terminator)
+
+Useful tool in order to have specifics terminal functionnalities like splitting.
