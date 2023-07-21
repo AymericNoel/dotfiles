@@ -29,5 +29,8 @@ jwt-extract() {
   echo -e "\e[31mLifetime:\e[0m"
   lifetime=$(( ($exp - $iat) / 60 ))
   echo "${lifetime} minutes"
+}
 
+hex2num() {
+  printf "%d\n" $1
 }
