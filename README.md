@@ -105,3 +105,7 @@ Graphical disk usage in cli.
 ## 21. [Terminator](https://doc.ubuntu-fr.org/terminator)
 
 Useful tool in order to have specifics terminal functionnalities like splitting.
+
+## 22. [ncdu](https://www.linuxtricks.fr/wiki/ncdu-visualiser-facilement-la-taille-des-dossiers-en-console)
+
+Graphical `du`.
