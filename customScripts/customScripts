@@ -34,3 +34,7 @@ jwt-extract() {
 hex2num() {
   printf "%d\n" $1
 }
+
+num2hex() {
+  printf "0x%X\n" $1
+}
