@@ -109,3 +109,7 @@ Useful tool in order to have specifics terminal functionnalities like splitting.
 ## 22. [ncdu](https://www.linuxtricks.fr/wiki/ncdu-visualiser-facilement-la-taille-des-dossiers-en-console)
 
 Graphical `du`.
+
+## 23. [Meld](https://doc.ubuntu-fr.org/meld)
+
+Useful to compare two files with a graphical window.
