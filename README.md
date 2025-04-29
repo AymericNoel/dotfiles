@@ -113,3 +113,7 @@ Graphical `du`.
 ## 23. [Meld](https://doc.ubuntu-fr.org/meld)
 
 Useful to compare two files with a graphical window.
+
+## 24. [Pwgen](https://doc.ubuntu-fr.org/pwgen)
+
+Useful tool to generate strong password in a ~random way.
