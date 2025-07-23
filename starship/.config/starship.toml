@@ -14,3 +14,6 @@ disabled = false
 
 [sudo]
 disabled = false
+
+[direnv]
+disabled = false
