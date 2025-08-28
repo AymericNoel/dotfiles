@@ -134,3 +134,28 @@ You were investigating a Python process (`2762498`) to:
 
 This approach is common for debugging hung processes, resource leaks, or unexpected behavior. If you share the actual output, I can help interpret it further!
 
+
+
+## Make a live USB key
+
+### Graphical
+
+You can use [Etcher](https://etcher.balena.io/#download-etcher) after downloading the iso file and connecting your USB key.
+
+### Command line
+
+You can use `dd` to mount to partition:
+
+- Check that your file is bootable : `file myOS.iso`
+- Identify with `fdisk -l` the disk of the usb key
+- Run `sudo dd if=kali-linux-2025.2-live-amd64.iso of=/dev/sdX conv=fsync bs=4M status=progress`
+
+### Wipe usb live boot to put back file partition
+
+- `fidsk -l` to see the correct partition
+- `umount /dev/sdX` to umount the partition 
+- `sudo fdisk /dev/sdX` to start interactive prompt 
+- Press `d` to delete the partition
+- Press `o` to create new DOS partition table
+- Press `n` to create new primary partition
+- Format partition with `sudo mkfs.ext4 /dev/sdX1`
