@@ -61,7 +61,6 @@ useful when you quit logs and want to see what it is happening
 
 You ran a series of commands to investigate a specific process (PID `2762498`). Here's a breakdown of each command and its purpose:
 
----
 
 ### **1. `ps -ef | grep python`**  
 - **Purpose**: List all running processes and filter for Python-related ones.  
@@ -70,13 +69,9 @@ You ran a series of commands to investigate a specific process (PID `2762498`). 
   - `grep python` → Filters the output to show only lines containing "python".  
 - **Why?** To identify Python processes running on the system (likely to find the target PID `2762498`).  
 
----
-
 ### **2. `top`**  
 - **Purpose**: Display real-time system processes (CPU, memory, etc.).  
 - **Why?** To check overall system resource usage or observe the Python process's activity.  
-
----
 
 ### **3. `strace -p 2762498`**  
 - **Purpose**: Trace system calls and signals of the process with PID `2762498`.  
@@ -85,8 +80,6 @@ You ran a series of commands to investigate a specific process (PID `2762498`). 
   - `-p 2762498` → Attaches to the specified process ID.  
 - **Why?** To see what the process is doing (e.g., file/network operations, hangs, errors).  
 
----
-
 ### **4. `cd /proc/2762498`**  
 - **Purpose**: Navigate to the process's directory in `/proc` (virtual filesystem).  
 - **Details**:  
@@ -94,13 +87,9 @@ You ran a series of commands to investigate a specific process (PID `2762498`). 
   - Initially, you tried `/ptoc` (typo) and corrected it to `/proc`.  
 - **Why?** To inspect the process's runtime attributes (e.g., open files, environment variables).  
 
----
-
 ### **5. `ls`**  
 - **Purpose**: List files in `/proc/2762498`.  
 - **Why?** To see available process information (e.g., `fd`, `cwd`, `exe`, `status`).  
-
----
 
 ### **6. `cd fd` → `ls -l`**  
 - **Purpose**: Inspect the process's open file descriptors.  
@@ -109,8 +98,6 @@ You ran a series of commands to investigate a specific process (PID `2762498`). 
   - `ls -l` → Shows file descriptors (e.g., `0`=stdin, `1`=stdout, `2`=stderr, others=files/sockets).  
 - **Why?** To check what files/sockets the process is using (e.g., logs, network connections).  
 
----
-
 ### **7. `lsof -p 2762498`**  
 - **Purpose**: List all open files/sockets for the process.  
 - **Details**:  
@@ -118,13 +105,9 @@ You ran a series of commands to investigate a specific process (PID `2762498`). 
   - `-p 2762498` → Filters for the specified PID.  
 - **Why?** Alternative to `/proc/[PID]/fd` with more detailed output (e.g., file paths, ports).  
 
----
-
 ### **8. `lsof -p 2762498 | grep 70594527`**  
 - **Purpose**: Filter `lsof` output for a specific file/connection (`70594527`).  
 - **Why?** To check if the process is interacting with a specific file/socket (e.g., a port, temporary file).  
-
----
 
 ### **Key Takeaways**  
 You were investigating a Python process (`2762498`) to:  
