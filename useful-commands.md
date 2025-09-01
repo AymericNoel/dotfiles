@@ -84,7 +84,6 @@ You ran a series of commands to investigate a specific process (PID `2762498`). 
 - **Purpose**: Navigate to the process's directory in `/proc` (virtual filesystem).  
 - **Details**:  
   - `/proc/[PID]` → Contains runtime details about the process (memory, open files, etc.).  
-  - Initially, you tried `/ptoc` (typo) and corrected it to `/proc`.  
 - **Why?** To inspect the process's runtime attributes (e.g., open files, environment variables).  
 
 ### **5. `ls`**  
